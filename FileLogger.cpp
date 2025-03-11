@@ -17,7 +17,7 @@ bool FileLogger::setDir(const std::filesystem::path& directory_address)
     {
         if (!mkdir(directory_address)) 
         {
-            errorMessage = "Error FileLogger: Failed to create directory: " + directory_address.string();
+            errorMessage = "Failed to create directory: " + directory_address.string();
             return false; // Exit with an error code
         }
     }
@@ -37,7 +37,7 @@ bool FileLogger::open(const std::string& name_add, std::ios_base::openmode mode)
 
     if (!_fileStream.is_open()) 
     {
-        errorMessage = "Error FileLogger: Can not open the file: " + name_add + ".";
+        errorMessage = "Can not open the file: " + name_add + ".";
         return false;
     }
 
